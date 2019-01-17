@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,8 @@ namespace Web03.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            int quantidadeDeCarros = new CarroRepositorio().ContabilizarCarros();
+            ViewBag.QuantidadeCarros = quantidadeDeCarros;
             return View();
         }
     }

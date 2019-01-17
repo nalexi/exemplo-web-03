@@ -63,6 +63,7 @@
             <thead>
                 <tr>
                     <th class="coluna-codigo">Codigo</th>
+                    <th class="coluna-categoria">Categoria</th>
                     <th class="coluna-modelo">Modelo</th>
                     <th class="coluna-preco">Preço</th>
                     <th class="coluna-datacompra">Data da Compra</th>
@@ -70,10 +71,11 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Web03.Models.Carro carro in ViewBag.Carros)
+                @foreach (Models.Carro carro in ViewBag.Carros)
                 {
                     <tr>
                         <td>@carro.Id</td>
+                        <td>@carro.Categoria.Nome</td>
                         <td>@carro.Modelo</td>
                         <td>@carro.Preco</td>
                         <td>@carro.DataCompra</td>
@@ -90,6 +92,7 @@
             <tfoot>
                 <tr>
                     <th class="coluna-codigo">Codigo</th>
+                    <th class="coluna-categoria">Categoria</th>
                     <th class="coluna-modelo">Modelo</th>
                     <th class="coluna-preco">Preço</th>
                     <th class="coluna-datacompra">Data da Compra</th>

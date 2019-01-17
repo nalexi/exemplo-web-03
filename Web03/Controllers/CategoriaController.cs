@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Web03.Models;
-using Web03.Repositories;
+using Models;
+using Repository;
 
 namespace Web03.Controllers
 {
@@ -19,26 +19,7 @@ namespace Web03.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index(string busca = "")
-        {
-            List<Categoria> categorias = repositorio.ObterTodos(busca);
-            ViewBag.Categorias = categorias;
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult IndexAjax()
-        {
-            return View();
-        }
-        [HttpGet]
-        public ActionResult CadastrarAjax()
-        {
-            return View("Cadastrar");
-        }
-
-        [HttpGet]
-        public ActionResult CadastroRapidp()
+        public ActionResult Index()
         {
             return View();
         }
@@ -69,12 +50,6 @@ namespace Web03.Controllers
         }
 
         [HttpGet]
-        public ActionResult Delete(int id)
-        {
-            return RedirectToAction("index");
-        }
-
-        [HttpGet]
         public ActionResult DeleteAjax(int id)
         {
             repositorio.Apagar(id);
@@ -83,22 +58,22 @@ namespace Web03.Controllers
             return Json(json, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
-        public ActionResult Editar(int id)
-        {
-            Categoria categoria = repositorio.ObterPeloId(id);
-            ViewBag.Categoria = categoria;
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Update(Categoria categoria)
+        public JsonResult Update(Categoria categoria)
         {
             Categoria categoriaPrincipal = repositorio.ObterPeloId(categoria.Id);
             categoriaPrincipal.Nome = categoria.Nome;
 
             repositorio.Alterar(categoriaPrincipal);
-            return RedirectToAction("Editar", new { id = categoriaPrincipal.Id });
+            return Json(JsonConvert.SerializeObject(categoriaPrincipal));
+        }
+        
+        [HttpGet]
+        public ActionResult ObterPeloId(int id)
+        {
+            var categoria = repositorio.ObterPeloId(id);
+            var json = JsonConvert.SerializeObject(categoria);
+            return Json(json, JsonRequestBehavior.AllowGet);
         }
     }
 

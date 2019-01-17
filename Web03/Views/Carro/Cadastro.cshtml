@@ -44,6 +44,16 @@
     <div class="container-fluid">
         <form action="/carro/store" method="post">
             <div class="form-group">
+                <label for="campo-categoria">Categoria</label>
+                <select class="form-control" id="campo-categoria" name="carro.IdCategoria">
+                    <option disabled="disabled" selected="selected" >Selecione uma Categoria</option>
+                    @foreach (Models.Categoria categoria in ViewBag.Categorias)
+                    {
+                        <option value="@categoria.Id">@categoria.Nome</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="campo-modelo">Modelo</label>
                 <input class="form-control" type="text" id="campo-modelo" name="carro.Modelo" required="required" />
             </div>

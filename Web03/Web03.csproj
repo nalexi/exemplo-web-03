@@ -105,7 +105,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\download.ico" />
     <Content Include="Content\Site.css" />
-    <Content Include="Database\Estrutura.sql" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -170,22 +169,10 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\CorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Database\Conexao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Interface\IBrinquedoRepositorio.cs" />
-    <Compile Include="Interface\ICarroRepositorio.cs" />
-    <Compile Include="Interface\IRepositorio.cs" />
-    <Compile Include="Models\Brinquedo.cs" />
-    <Compile Include="Models\Carro.cs" />
-    <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\Cor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\BrinquedoRepositorio.cs" />
-    <Compile Include="Repositories\CarroRepositorio.cs" />
-    <Compile Include="Repositories\CategoriaRepositorio.cs" />
-    <Compile Include="Repositories\CorRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -198,8 +185,8 @@
     <Content Include="Views\Brinquedo\CadastroRapidp.cshtml" />
     <Content Include="Views\Brinquedo\Index.cshtml" />
     <Content Include="Views\Brinquedo\IndexAjax.cshtml" />
-    <Content Include="Views\Categoria\Cadastrar.cshtml" />
-    <Content Include="Views\Categoria\Editar.cshtml" />
+    <Content Include="Views\Categoria\ModalCadastrar.cshtml" />
+    <Content Include="Views\Categoria\ModalEditar.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
     <Content Include="Views\Cor\Index.cshtml" />
     <Content Include="Views\Cor\Cadastro.cshtml" />
@@ -212,7 +199,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Models.csproj">
+      <Project>{e78d69fd-b9f6-4092-9c04-738660d8da5f}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{ed63c807-3295-421c-a49f-fab5d6a8fe5c}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>

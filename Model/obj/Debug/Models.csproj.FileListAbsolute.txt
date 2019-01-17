@@ -1,0 +1,6 @@
+C:\Users\nlasa\source\repos\Web03\Model\bin\Debug\Models.dll
+C:\Users\nlasa\source\repos\Web03\Model\bin\Debug\Models.pdb
+C:\Users\nlasa\source\repos\Web03\Model\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\nlasa\source\repos\Web03\Model\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\nlasa\source\repos\Web03\Model\obj\Debug\Models.dll
+C:\Users\nlasa\source\repos\Web03\Model\obj\Debug\Models.pdb

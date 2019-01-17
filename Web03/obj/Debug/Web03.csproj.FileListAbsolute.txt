@@ -76,3 +76,7 @@ C:\Users\nlasa\source\repos\Web03\Web03\obj\Debug\Web03.pdb
 C:\Users\nlasa\source\repos\Web03\Web03\bin\Newtonsoft.Json.dll
 C:\Users\nlasa\source\repos\Web03\Web03\bin\Newtonsoft.Json.pdb
 C:\Users\nlasa\source\repos\Web03\Web03\bin\Newtonsoft.Json.xml
+C:\Users\nlasa\source\repos\Web03\Web03\bin\Models.dll
+C:\Users\nlasa\source\repos\Web03\Web03\bin\Repository.dll
+C:\Users\nlasa\source\repos\Web03\Web03\bin\Models.pdb
+C:\Users\nlasa\source\repos\Web03\Web03\bin\Repository.pdb

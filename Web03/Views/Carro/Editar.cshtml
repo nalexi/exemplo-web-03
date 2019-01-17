@@ -30,17 +30,36 @@
     <div class="container-fluid">
 
         <form method="post" action="/carro/update/@ViewBag.Carro.Id">
+            <input type="hidden" value="@ViewBag.Carro.Id" name="carro.Id"/>
+            <div class="form-group">
+                <label for="campo-categoria">Categoria</label>
+                <select class="form-control" id="campo-categoria" name="carro.IdCategoria">
+                    @foreach (Models.Categoria categoria in ViewBag.Categorias)
+                    {
+                        if (categoria.Id == ViewBag.Carro.IdCategoria)
+                        {
+                            <option value="@categoria.Id" selected="selected">@categoria.Nome</option>  
+
+                        }
+                        else
+                        {
+                            <option value="@categoria.Id">@categoria.Nome</option>
+                        }
+                    }
+                </select>
+
+            </div>
             <div class="form-group">
                 <label for="campo-modelo">Modelo</label>
-                <input class="form-control" type="text" id="campo-modelo" name="modelo" value="@ViewBag.Carro.Modelo" required="required" />
+                <input class="form-control" type="text" id="campo-modelo" name="carro.Modelo" value="@ViewBag.Carro.Modelo" required="required" />
             </div>
             <div class="form-group">
                 <label for="campo-preco">Preço</label>
-                <input class="form-control" type="number" id="campo-preco" name="preco" value="@ViewBag.Carro.Preco" required="required" />
+                <input class="form-control" type="number" id="campo-preco" name="carro.Preco" value="@ViewBag.Carro.Preco" required="required" />
             </div>
             <div class="form-group">
                 <label for="campo-datacompra">Data da Compra</label>
-                <input class="form-control" type="datetime" id="campo-datacompra" name="datacompra" value="@ViewBag.Carro.DataCompra" required="required" />
+                <input class="form-control" type="datetime" id="campo-datacompra" name="carro.DataCompra" value="@ViewBag.Carro.DataCompra" required="required" />
             </div>
             <div class="float-right">
                 <button class="btn btn-primary" type="submit" value="Salvar"><i class="fas fa-hdd"></i> Salvar</button>

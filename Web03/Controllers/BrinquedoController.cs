@@ -1,5 +1,5 @@
-﻿using Web03.Models;
-using Web03.Repositories;
+﻿using Models;
+using Repository;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

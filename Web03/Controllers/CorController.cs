@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Web03.Models;
-using Web03.Repositories;
+using Models;
+using Repository;
 
 namespace Web03.Controllers
 {
